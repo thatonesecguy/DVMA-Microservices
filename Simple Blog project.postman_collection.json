@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "84a9ab96-3ec5-4574-b722-e6817f6c8e95",
+		"name": "Simple Blog project",
+		"description": "All tests for the APIs set up for the Blog Microservice Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Posts Service",
+			"item": [
+				{
+					"name": "localhost:4000/posts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\" : \"First Post\"\n}"
+						},
+						"url": {
+							"raw": "localhost:4000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Create a post!"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4000/posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Retrieve all posts!"
+					},
+					"response": []
+				}
+			],
+			"description": "Create and Retrieve Posts",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Comments Service",
+			"item": [
+				{
+					"name": "localhost:4001/posts/123/comments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:4001/posts/123/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"posts",
+								"123",
+								"comments"
+							]
+						},
+						"description": "Retrieve all comments for post id = 123"
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:4001/posts/123/comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\" : \"I am a comment\"\n}"
+						},
+						"url": {
+							"raw": "localhost:4001/posts/123/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"posts",
+								"123",
+								"comments"
+							]
+						},
+						"description": "Create a comment for a post id = 123"
+					},
+					"response": []
+				}
+			],
+			"description": "Create and retrieve comments",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
